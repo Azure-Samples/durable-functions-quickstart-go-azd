@@ -102,7 +102,9 @@ management URLs: they can contain host system keys. The scheduler connection and
 task hub dashboard URL are exported as `azd` outputs.
 
 The optional VNet setting only privatizes host storage, not the scheduler.
-Scheduler access uses its public authenticated endpoint. Resource and telemetry
+The scheduler IP allowlist permits all IPv4 addresses so the sample can reach its
+public endpoint; Microsoft Entra authentication and task hub RBAC remain required.
+Restrict the allowlist or use private networking for production. Resource and telemetry
 usage can incur charges; delete the sample environment with `azd down`.
 
 ## Development
